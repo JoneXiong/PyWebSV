@@ -23,7 +23,7 @@ Mole 环境下
 1. pywebsv/config.py里
    `DJANGO_MODEL = False`
 2. `python mole_run.py`
-3. 访问http://127.0.0.1:8081/rpc/
+3. 访问`http://127.0.0.1:8081/rpc/`
 
 
 Django 环境下
@@ -33,7 +33,7 @@ Django 环境下
 1. pywebsv/config.py里
    `DJANGO_MODEL = True`
 2. `python django_run.py runserver 0.0.0.0:8081`
-3. 访问http://127.0.0.1:8081/rpc/
+3. 访问`http://127.0.0.1:8081/rpc/`
 
 二 集成到已有django系统里
 
@@ -48,7 +48,7 @@ Django 环境下
 3. urls.py中加入两个url配置
 
     1. `(r'^rpc/', include('pywebsv.django_urls'))`
-    2. `url(r'^rpc_static/(?P<path>.*)$','django.views.static.serve',{'document_root':os.path.join(os.path.dirname(__file__),'pywebsv/static').replace('\\','/')},name="rpc_static")`
+    2. url(r'^rpc_static/(?P<path>.*)$','django.views.static.serve',{'document_root':os.path.join(os.path.dirname(__file__),'pywebsv/static').replace('\\','/')},name="rpc_static")
 
 注意:
 ====
