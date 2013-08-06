@@ -19,10 +19,16 @@ A webservice tool for Python (Django or Mole)
 =======
 
 Mole 环境下
+
 1. pywebsv/config.py里
+
    DJANGO_MODEL = False
-2. python mole_run.py
+2. 
+   
+   python mole_run.py
+
 3. 访问http://127.0.0.1:8081/rpc/
+
 
 Django 环境下
 
@@ -36,13 +42,20 @@ Django 环境下
 二 集成到已有django系统里
 
 1. pywebsv/config.py里
+
    DJANGO_MODEL = True
+
 2. settings.py中:
+
    INSTALLED_APPS 加入pywebsv模块
    TEMPLATE_DIRS 加入 pywebsv/templates
+
 3. urls.py中加入两个url配置
+
     (r'^rpc/', include('pywebsv.django_urls'))
     url(r'^rpc_static/(?P<path>.*)$','django.views.static.serve',{'document_root':os.path.join(os.path.dirname(__file__),'pywebsv/static').replace('\\','/')},name="rpc_static")
+
 注意:
+
 内置的几个demo在demo.py定义，请确保系统运行时加载自己定义的webservice代码(如import demo.py)
 在django环境下请注释掉CsrfViewMiddleware中间件
