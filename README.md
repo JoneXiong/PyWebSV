@@ -55,6 +55,22 @@ Django 环境下
 1. 内置的几个demo在demo.py定义
 2. 请确保系统运行时加载自己定义的webservice代码(如import demo.py)
 3. 在django环境下请注释掉CsrfViewMiddleware中间件
+4. 接口定义
+   
+         class Calculator(object):
+            u"""
+            数学计算函数服务,提供几个函数例子
+            """
+            @ladonize(int,int,rtype=int)
+            def add(self,a,b):
+              """
+              求两个整数的和
+              @param a: 参数一 值a
+              @param b: 参数二 值b
+              @rtype: 返回 执行结果
+              """
+              return a+b
+        
 
 ![info](https://github.com/JoneXiong/PyWebSV/raw/master/pywebsv/static/show1.jpg)
 
